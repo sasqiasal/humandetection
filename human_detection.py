@@ -41,7 +41,7 @@ while True:
                 detected = True
                 x1, y1, x2, y2 = map(int, box.xyxy[0])
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                cv2.putText(frame, "Manusia", (x1, y1 - 10),
+                cv2.putText(frame, "ada yang lewat", (x1, y1 - 10),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
         frames.append(frame)
@@ -56,7 +56,7 @@ while True:
         if empty_frame_count >= empty_frame_threshold:
             alarm_ready = True
 
-    # Tampilkan semua frame
+    # menampilkan semua frame
     for i, frame in enumerate(frames):
         if frame is not None:
             cv2.imshow(f"Kamera {i+1}", frame)
